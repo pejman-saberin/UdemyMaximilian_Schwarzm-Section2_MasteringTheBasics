@@ -13,8 +13,8 @@ export class ShopPage {
   constructor(public navCtrl: NavController) {
   }
 
-  onGoToBuyout(){
-    this.navCtrl.push(BuyoutPage);
+  onGoToBuyout(productData: {name:string, quantity: number}){
+    this.navCtrl.push(BuyoutPage,productData);
   }
 
   ionViewDidLoad() {
