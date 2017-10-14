@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavParams} from 'ionic-angular';
+import {NavParams,NavController} from 'ionic-angular';
 
 
 @Component({
@@ -9,9 +9,13 @@ import {NavParams} from 'ionic-angular';
 export class BuyoutPage{
 
   productData:{name:string, quanity:number}
-  constructor(private navParams: NavParams){
+  constructor(private navParams: NavParams, private navCtrl:NavController){
     this.productData=this.navParams.data;
 
+  }
+
+  onConfirmPurchase(){
+    this.navCtrl.popToRoot();//you can also pass data in this metod
   }
 
   //you can use ngoninit to retrive data
